@@ -1,0 +1,1 @@
+[{"Name":"__cf_bm","Value":"Iu4SATrBbzKRdjFdo8EfB_DJpO7OzaJ0ID0j6P7q0Cc-1734538690-1.0.1.1-OAKDtg6WlUQIIImO7ln4yF_LBGgyM3Pp_A3gnbKtLq1SssyvShdidbZ3t9keoYQviZdHCpr_NiYfZJjq0Jr0lQ","Domain":".www.carrefour.es","Path":"\/","Max-Age":null,"Expires":1734540490,"Secure":true,"Discard":false,"HttpOnly":true,"SameSite":"None"}]
