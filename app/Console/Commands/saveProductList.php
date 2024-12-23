@@ -34,8 +34,8 @@ class saveProductList extends Command
             return 1;
         }
 
-        $this->info("Python script output:");
-        $this->line($output);
+        // $this->info("Python script output:");
+        // $this->line($output);
 
         $products = json_decode($output, true);
 

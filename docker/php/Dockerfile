@@ -41,6 +41,12 @@ RUN curl -fsSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
 RUN python3 -m venv /opt/venv \
     && /opt/venv/bin/pip install --no-cache-dir selenium
 
+# install php extensions
+RUN docker-php-ext-install pdo
+
+# Instalar Composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
+
 # add path to virtual environment
 ENV PATH="/opt/venv/bin:$PATH"
 
@@ -53,6 +59,3 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # work path
 WORKDIR /app
-
-# install php extensions
-RUN docker-php-ext-install pdo pdo_mysql

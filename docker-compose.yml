@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: docker/php/Dockerfile
-    container_name: flipflow_coding_interview
+    container_name: laravel-app
     working_dir: /app
     volumes:
       - .:/app
