@@ -20,12 +20,13 @@ class saveProductList extends Command
         $url = $this->argument('url');
         $this->info("Scraping products from: $url");
 
-        // Caminho para o script Python
+        // path to python script
         $scriptPath = base_path('scraper.py');
 
-        // Executar o script Python
+        // execute o python script
         $command = escapeshellcmd("python3 $scriptPath " . escapeshellarg($url));
-        sleep(5);
+
+        //get return scraped products by selenium
         $output = shell_exec($command);
 
         if ($output === null) {
@@ -38,13 +39,14 @@ class saveProductList extends Command
 
         $products = json_decode($output, true);
 
-        $this->info("Contagem de produtos: ".count($products));
+        $this->info("Count products: ".count($products));
 
         if (json_last_error() !== JSON_ERROR_NONE) {
-            $this->error('Invalid JSON returned from Python script.');
+            $this->error('Invalid JSON returned from python script.');
             return 1;
         }
 
+        // loop to get each product and save in sqLite
         foreach ($products as $product) {
             Product::updateOrCreate(
                 ['title' => $product['title']],

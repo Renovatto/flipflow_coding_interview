@@ -42,14 +42,13 @@ def main(url):
         time.sleep(3)
 
         #####################################
-        # TESTE PARA RECUPERAR HTML DA PAGINA
-        page_source = nav.page_source
-        fileToWrite = open("response.html", "w")
-        fileToWrite.write(page_source)
-        fileToWrite.close()
+        # TEST TO GET HTML FROM PAGE
+        # page_source = nav.page_source
+        # fileToWrite = open("response.html", "w")
+        # fileToWrite.write(page_source)
+        # fileToWrite.close()
         #####################################
 
-        # Localizar elementos de produtos
         products = []
 
         nav.save_screenshot("screenshot.png")  # Salve um screenshot para depuração
@@ -90,14 +89,14 @@ def main(url):
     finally:
         data = json.dumps(products)
         #####################################
-        # TESTE PARA VERIFICAR JSON
-        fileToWrite = open("data.txt", "w")
-        fileToWrite.write(data)
-        fileToWrite.close()
+        # # TEST TO CHECK JSON
+        # fileToWrite = open("data.txt", "w")
+        # fileToWrite.write(data)
+        # fileToWrite.close()
         #####################################
-        nav.save_screenshot("screenshot2.png")  # Salve um screenshot para depuração
+
         return data
-        # Feche o navegador
+        # close browser
         nav.quit()
 
 if __name__ == "__main__":
